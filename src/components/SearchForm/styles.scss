@@ -1,4 +1,5 @@
 $shadow: rgb(17, 17, 17) 2px 2px 3px;
+$shadow-two: rgb(17, 17, 17) 0px 0px 0px;
 
 .search-form {
     display: flex;
@@ -7,13 +8,19 @@ $shadow: rgb(17, 17, 17) 2px 2px 3px;
 
     input {
         width: 30vw;
+        max-width:600px;
+        background: transparent;
+        color: #fff;
         padding-left: 10px;
         height: 2.5rem;
-        border-radius: 10px;
+        border-width: 0 0 1px 1px;
+        // border-radius: 10px;
         width: 60vw;
         font-size: 2rem;
-        box-shadow: $shadow;
-
+        box-shadow: $shadow-two;
+&::placeholder{
+    color:white;
+}
         &:focus {
             outline: none;
         }
@@ -23,9 +30,10 @@ $shadow: rgb(17, 17, 17) 2px 2px 3px;
         position: fixed;
         bottom: 20vh;
         width: 20vw;
-        background: #ffea53;
+        background: transparent;
+        color:#fff;
         font-size: 1.5rem;
-        border: 1px solid grey;
+        border: 1px solid #fff;
         padding: 8px 24px;
         border-radius: 10px;
         box-shadow: $shadow;

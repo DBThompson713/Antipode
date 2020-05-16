@@ -5,13 +5,15 @@ import SearchForm from './../SearchForm';
 
 const Homepage = () => {
   const [location, setLocation] = useState('');
+  const [antipodeLocation, setAntipodeLocation] = useState('');
   const [geoLat, setGeoLat] = useState();
   const [oppLong, setOppLong] = useState({});
   const [oppLat, setOppLat] = useState({});
   const [geoLong, setGeoLong] = useState({});
-
   const inputElement = React.createRef();
   const apiKey = process.env.REACT_APP_COORDS_API;
+  const coordsCall = `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${apiKey}`;
+  const antipodeCall = `https://api.opencagedata.com/geocode/v1/json?q=${oppLat}+${oppLong}&key=${apiKey}`;
 
   const handleInput = (e) => {
     const newLocation = e.target.value;
@@ -21,10 +23,11 @@ const Homepage = () => {
   const getAntipode = async () => {
     if (location !== '') {
       GetCoords(location);
-      console.log();
+      //   console.log();
       //
     } else {
-      alert('Please enter a location');
+      //   alert('Please enter a location');
+      console.log('');
     }
 
     return;
@@ -32,28 +35,47 @@ const Homepage = () => {
 
   const GetCoords = async (location) => {
     await axios
-      .get(
-        `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${apiKey}`
-      )
+      .get(coordsCall)
       .then((results) => {
-        console.log(results);
+        // console.log(results);
+        const geo = results.data.results[0].geometry;
 
-        setGeoLat(results.data.results[0].geometry.lat);
-        setGeoLong(results.data.results[0].geometry.lng);
-        setOppLat(results.data.results[0].geometry.lat * -1);
-        setOppLong(results.data.results[0].geometry.lng * -1);
+        setGeoLat(geo.lat);
+        setGeoLong(geo.lng);
+        setOppLat(geo.lat * -1);
+        setOppLong(geo.lng * -1);
+
+        // console.log(results.data.results[0]);
+        //
+        //
+        //
+        console.log(antipodeCall);
+        axios.get(antipodeCall).then(
+          console.log(results)
+          // setAntipodeLocation()
+        );
+
+        //
+        // /
+        //
+        // alert(
+        //   `${results.data.results[0].formatted}:${geoLat}Lat -${geoLong}Long ::::::: Antipode:${oppLat}Lat-${oppLong} `
+        // );
+        console.log('');
       })
       .catch(console.log(''));
   };
+
   return (
     <div className='home-container'>
-      <p className='title'>Antipode Weather</p>
+      <p className='title'>Antipode</p>
       <SearchForm
         handleInput={handleInput}
         location={location}
         inputElement={inputElement}
         getAntipode={getAntipode}
       />
+      {/* {`${location}:${geoLat}:${geoLong}::::::::${antipodeLocation}${oppLat}:${oppLong}`} */}
     </div>
   );
 };
