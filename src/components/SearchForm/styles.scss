@@ -1,0 +1,33 @@
+$shadow: rgb(17, 17, 17) 2px 2px 3px;
+
+.search-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        width: 30vw;
+        padding-left: 10px;
+        height: 2.5rem;
+        border-radius: 10px;
+        width: 60vw;
+        font-size: 2rem;
+        box-shadow: $shadow;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .search-button {
+        position: fixed;
+        bottom: 20vh;
+        width: 20vw;
+        background: #ffea53;
+        font-size: 1.5rem;
+        border: 1px solid grey;
+        padding: 8px 24px;
+        border-radius: 10px;
+        box-shadow: $shadow;
+    }
+}

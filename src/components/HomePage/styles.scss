@@ -1,0 +1,28 @@
+$radiusMain: 8x;
+
+.home-container {
+    .title {
+        position: absolute;
+        top: 2vh;
+        left: 5vw;
+        font-size: 1.5rem;
+        font-family: verdana;
+        text-align: center;
+        font-size: 34px;
+        color: rgb(255, 255, 255);
+        text-shadow: rgb(17, 17, 17) 4px 4px 8px;
+    }
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("./../../images/sky.jpeg");
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
