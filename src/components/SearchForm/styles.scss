@@ -1,5 +1,5 @@
-$shadow: rgb(17, 17, 17) 2px 2px 3px;
-$shadow-two: rgb(17, 17, 17) 0px 0px 0px;
+@import './../../sass/resources.scss';
+
 
 .search-form {
     display: flex;
@@ -8,34 +8,44 @@ $shadow-two: rgb(17, 17, 17) 0px 0px 0px;
 
     input {
         width: 30vw;
-        max-width:600px;
+        position: relative;
+        max-width: 400px;
         background: transparent;
         color: #fff;
         padding-left: 10px;
         height: 2.5rem;
-        border-width: 0 0 1px 1px;
-        // border-radius: 10px;
+        border-width: 0 0 1px 0px;
         width: 60vw;
         font-size: 2rem;
         box-shadow: $shadow-two;
-&::placeholder{
-    color:white;
-}
+        text-align: center;
+        text-shadow: $textShadow;
+        &::placeholder {
+            color: white;
+            opacity:.55;
+            font-size:75%;
+            text-shadow: $textShadow;
+        }
         &:focus {
             outline: none;
         }
     }
 
     .search-button {
-        position: fixed;
-        bottom: 20vh;
-        width: 20vw;
-        background: transparent;
-        color:#fff;
+        position: relative;
+        width:20vw;
+        top: 15vh;
+        background: $buttonBG;
+        color: #fff;
         font-size: 1.5rem;
         border: 1px solid #fff;
         padding: 8px 24px;
         border-radius: 10px;
         box-shadow: $shadow;
+        text-shadow: $textShadow;
+        @include desktop{
+            max-width:175px;
+
+        }
     }
 }

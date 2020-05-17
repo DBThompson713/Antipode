@@ -2,11 +2,12 @@ import React from 'react';
 import Homepage from './components/HomePage';
 import ResultsPage from './components/ResultsPage';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <div className='App'>
+      <p className='title'>antipode</p>
       <Router>
         <Homepage />
         <ResultsPage />

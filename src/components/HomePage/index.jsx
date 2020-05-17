@@ -6,6 +6,7 @@ import SearchForm from './../SearchForm';
 const Homepage = () => {
   const [location, setLocation] = useState('');
   const [antipodeLocation, setAntipodeLocation] = useState('');
+  const [fullName, setFullName] = useState('');
   const [geoLat, setGeoLat] = useState();
   const [oppLong, setOppLong] = useState({});
   const [oppLat, setOppLat] = useState({});
@@ -41,6 +42,7 @@ const Homepage = () => {
         const geo = results.data.results[0].geometry;
 
         setGeoLat(geo.lat);
+        setFullName(results.data.results[0].formatted);
         setGeoLong(geo.lng);
         setOppLat(geo.lat * -1);
         setOppLong(geo.lng * -1);
@@ -61,6 +63,9 @@ const Homepage = () => {
         // alert(
         //   `${results.data.results[0].formatted}:${geoLat}Lat -${geoLong}Long ::::::: Antipode:${oppLat}Lat-${oppLong} `
         // );
+        console.log(
+          `${fullName}:LAT:${geoLat}:LONG${geoLong}::::::::${antipodeLocation}LAT:${oppLat}:LONG:${oppLong}`
+        );
         console.log('');
       })
       .catch(console.log(''));
@@ -68,14 +73,12 @@ const Homepage = () => {
 
   return (
     <div className='home-container'>
-      <p className='title'>Antipode</p>
       <SearchForm
         handleInput={handleInput}
         location={location}
         inputElement={inputElement}
         getAntipode={getAntipode}
       />
-      {/* {`${location}:${geoLat}:${geoLong}::::::::${antipodeLocation}${oppLat}:${oppLong}`} */}
     </div>
   );
 };

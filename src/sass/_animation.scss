@@ -1,0 +1,13 @@
+$antipodeTitle: rotateTitle 3.75s alternate 4;
+
+@keyframes rotateTitle {
+    0% {
+      transform: rotate(0deg);
+    }
+    // 
+    100% {
+        transform: rotate(-180deg);
+        text-shadow: rgb(17, 17, 17) -4px -4px 8px;
+     
+    }
+  }
