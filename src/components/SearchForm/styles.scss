@@ -31,21 +31,4 @@
         }
     }
 
-    .search-button {
-        position: relative;
-        width:20vw;
-        top: 15vh;
-        background: $buttonBG;
-        color: #fff;
-        font-size: 1.5rem;
-        border: 1px solid #fff;
-        padding: 8px 24px;
-        border-radius: 10px;
-        box-shadow: $shadow;
-        text-shadow: $textShadow;
-        @include desktop{
-            max-width:175px;
-
-        }
-    }
 }

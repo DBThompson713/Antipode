@@ -13,15 +13,6 @@ const SearchForm = (props) => {
           value={props.location}
           onChange={props.handleInput}
         />
-
-        <div
-          role='button'
-          className='search-button'
-          type='submit'
-          onClick={props.getAntipode}
-        >
-          Search
-        </div>
       </form>
     </div>
   );
