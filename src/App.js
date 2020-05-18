@@ -6,12 +6,16 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.scss';
 
 function App() {
+  function reset() {
+    window.location.reload();
+  }
+
   return (
     <div className='App'>
-      <p className='title'>antipode</p>
+      <p className='title' onClick={reset}>
+        antipode
+      </p>
       <Router>
-        {/* <Homepage /> */}
-        {/* <ResultsPage /> */}
         <Route exact path='/' component={Homepage} />
         <Route path='/resultspage' component={ResultsPage} />
       </Router>

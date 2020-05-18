@@ -5,15 +5,14 @@ import SearchForm from './../SearchForm';
 import './styles.scss';
 
 const Homepage = () => {
+  const apiKey = process.env.REACT_APP_COORDS_API;
+  const inputElement = React.createRef();
   const [location, setLocation] = useState('');
   const [oppLong, setOppLong] = useState();
   const [oppLat, setOppLat] = useState();
   const [resultsData, setResultsData] = useState({});
   const [antipodeData, setAntipodeData] = useState({});
   const [hideResults, setHideResults] = useState(false);
-
-  const inputElement = React.createRef();
-  const apiKey = process.env.REACT_APP_COORDS_API;
   const coordsCall = `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${apiKey}`;
   const antipodeCall = `https://api.opencagedata.com/geocode/v1/json?q=${oppLat}+${oppLong}&key=${apiKey}`;
 
@@ -35,7 +34,7 @@ const Homepage = () => {
     await axios
       .get(coordsCall)
       .then((res) => {
-        setOppLong(res.data.results[0].geometry.lng * -1);
+        setOppLong(res.data.results[0].geometry.lng - 180);
         setOppLat(res.data.results[0].geometry.lat * -1);
         setResultsData(res.data.results[0]);
       })
