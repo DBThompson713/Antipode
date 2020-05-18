@@ -28,6 +28,10 @@
         border-radius: 10px;
         box-shadow: $shadow;
         text-shadow: $textShadow;
+
+        &:active{
+            background:red;
+        }
         @include desktop {
             max-width: 175px;
         }

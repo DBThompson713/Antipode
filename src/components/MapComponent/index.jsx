@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { compose, withProps } from 'recompose';
 import {
   withScriptjs,
@@ -7,6 +6,7 @@ import {
   GoogleMap,
   Marker,
 } from 'react-google-maps';
+import TheWeather from './../Weather';
 
 const MapComponent = compose(
   withProps({
@@ -20,16 +20,14 @@ const MapComponent = compose(
   withGoogleMap
 )((props) => (
   <div>
-    <p>
-      {props.lat} - {props.long}
-    </p>
+    <div>
+      <TheWeather lat={props.lat} long={props.long} />
+    </div>
     <GoogleMap
-      defaultZoom={8}
+      defaultZoom={3}
       defaultCenter={{ lat: props.lat, lng: props.long }}
     >
-      {props.isMarkerShown && (
-        <Marker position={{ lat: props.lat, lng: props.long }} />
-      )}
+      <Marker position={{ lat: props.lat, lng: props.long }} />
     </GoogleMap>
   </div>
 ));

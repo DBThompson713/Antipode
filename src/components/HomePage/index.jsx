@@ -33,6 +33,7 @@ const Homepage = () => {
   const GetCoords = async (location) => {
     await axios
       .get(coordsCall)
+
       .then((res) => {
         setOppLong(res.data.results[0].geometry.lng - 180);
         setOppLat(res.data.results[0].geometry.lat * -1);

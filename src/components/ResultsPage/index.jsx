@@ -23,12 +23,16 @@ const ResultsPage = (props, antipode) => {
         <div className='map-container'>
           <MapComponent lat={latitude} long={longitude} className='the-map' />
         </div>
-        {/* <h2>Lat:{latitude}</h2>
-        <h2>Long: {longitude}</h2> */}
       </section>
       <section className='results antipode-location'>
-        {/* <h1>{antipodeName}</h1> */}
-        <h1>Antipode</h1>
+        {antipodeName !== 'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
+          <h1>{antipodeName}</h1>
+        )}
+        {antipodeName === 'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
+          <h1>Antipode</h1>
+        )}
+
+        {/* <h1>Antipode</h1> */}
         <div className='map-container'>
           <MapComponent
             lat={oppLatitude}
@@ -36,8 +40,6 @@ const ResultsPage = (props, antipode) => {
             className='the-map'
           />
         </div>
-        {/* <h2>Lat:{oppLatitude}</h2>
-        <h2>Long: {oppLongitude}</h2> */}
       </section>
     </div>
   );
