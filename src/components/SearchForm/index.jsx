@@ -12,6 +12,7 @@ const SearchForm = (props) => {
           ref={props.inputElement}
           value={props.location}
           onChange={props.handleInput}
+          onKeyDown={props.handleKeyDown}
         />
       </form>
     </div>

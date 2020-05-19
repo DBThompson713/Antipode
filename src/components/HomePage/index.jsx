@@ -21,6 +21,13 @@ const Homepage = () => {
     setLocation(newLocation);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13 || event.target.key === 'Enter') {
+      event.preventDefault();
+      GetCoords(location);
+    }
+  };
+
   const getAntipode = async () => {
     if (location !== '') {
       GetCoords(location);
@@ -57,6 +64,7 @@ const Homepage = () => {
             location={location}
             inputElement={inputElement}
             getAntipode={getAntipode}
+            handleKeyDown={handleKeyDown}
           />
 
           <div

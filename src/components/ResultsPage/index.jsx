@@ -18,29 +18,35 @@ const ResultsPage = (props) => {
 
   return (
     <div className='results-container'>
+      {/* YOUR LOCATION */}
+
       <section className='results your-location '>
-        <h1>
-          <span>{locationName}</span>{' '}
-          <span>
+        <h1 className='title-coords'>
+          {locationName}{' '}
+          <span className='coords'>
             {' '}
-            LAT: {parseInt(latitude)} :: LONG:{parseInt(longitude)}
+            LAT: {parseInt(latitude)} :: LNG:{parseInt(longitude)}
           </span>
         </h1>
         <div className='map-container'>
           <MapComponent lat={latitude} long={longitude} className='the-map' />
         </div>
       </section>
+
+      {/* ANTIPODE  */}
+
       <section className='results antipode-location'>
         {antipodeName !== 'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
-          <h1>
-            {antipodeName} LAT: {parseInt(oppLatitude)} :: LONG:
-            {parseInt(oppLongitude)}
-          </h1>
+          <h1 className='title-coords'>{antipodeName}</h1>
         )}
         {antipodeName === 'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
-          <h1>
-            Antipode LAT: {parseInt(oppLatitude)} :: LONG:
-            {parseInt(oppLongitude)}
+          <h1 className='title-coords'>
+            Antipode{' '}
+            <span className='coords'>
+              {' '}
+              LAT: {parseInt(oppLatitude)} :: LNG:
+              {parseInt(oppLongitude)}
+            </span>
           </h1>
         )}
 

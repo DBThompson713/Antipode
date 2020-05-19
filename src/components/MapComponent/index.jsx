@@ -23,9 +23,6 @@ const MapComponent = compose(
   withGoogleMap
 )((props) => (
   <div>
-    <h3>
-      Lat:{parseInt(props.lat)} - Long:{parseInt(props.long)}
-    </h3>
     <div>
       <TheWeather lat={props.lat} long={props.long} />
     </div>
@@ -34,10 +31,7 @@ const MapComponent = compose(
       defaultCenter={{ lat: props.lat, lng: props.long }}
     >
       <Marker position={{ lat: props.lat, lng: props.long }} />
-    </GoogleMap>
-    <p>
-      Lat:{parseInt(props.lat)} - Long:{parseInt(props.long)}
-    </p>
+    </GoogleMap>{' '}
   </div>
 ));
 
