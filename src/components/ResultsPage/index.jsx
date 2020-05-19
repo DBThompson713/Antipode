@@ -19,17 +19,29 @@ const ResultsPage = (props) => {
   return (
     <div className='results-container'>
       <section className='results your-location '>
-        <h1>{locationName}</h1>
+        <h1>
+          <span>{locationName}</span>{' '}
+          <span>
+            {' '}
+            LAT: {parseInt(latitude)} :: LONG:{parseInt(longitude)}
+          </span>
+        </h1>
         <div className='map-container'>
           <MapComponent lat={latitude} long={longitude} className='the-map' />
         </div>
       </section>
       <section className='results antipode-location'>
         {antipodeName !== 'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
-          <h1>{antipodeName}</h1>
+          <h1>
+            {antipodeName} LAT: {parseInt(oppLatitude)} :: LONG:
+            {parseInt(oppLongitude)}
+          </h1>
         )}
         {antipodeName === 'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
-          <h1>Antipode</h1>
+          <h1>
+            Antipode LAT: {parseInt(oppLatitude)} :: LONG:
+            {parseInt(oppLongitude)}
+          </h1>
         )}
 
         {/* <h1>Antipode</h1> */}

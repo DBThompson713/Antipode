@@ -65,7 +65,7 @@ const Homepage = () => {
             type='submit'
             onClick={getAntipode}
           >
-            Search
+            Find antipode
           </div>
         </div>
       )}

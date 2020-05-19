@@ -37,7 +37,6 @@ const TheWeather = (props) => {
         </h2>
       )}
       {!temperature && <h2>Weather Data Unavailable </h2>}
-      <p>{conditions}</p>
     </div>
   );
 };

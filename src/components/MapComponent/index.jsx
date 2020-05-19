@@ -23,6 +23,9 @@ const MapComponent = compose(
   withGoogleMap
 )((props) => (
   <div>
+    <h3>
+      Lat:{parseInt(props.lat)} - Long:{parseInt(props.long)}
+    </h3>
     <div>
       <TheWeather lat={props.lat} long={props.long} />
     </div>
