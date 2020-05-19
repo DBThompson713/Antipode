@@ -1,20 +1,20 @@
 @import "./../../sass/resources.scss";
 
 .results-container {
-    height: 1000px;
+    min-height:750px;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-top: 5vh;
     overflow-y: scroll;
     margin-top: 65px;
 
-    @include desktop {
-        align-items: flex-start;
+    @include mid {
+        align-items: baseline;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         margin-top: 90px;
     }
 
@@ -26,8 +26,20 @@
         height: 20vh;
         margin-bottom: 10px;
 
-        @include desktop {
+        @include mid {
             width: 42vw;
+        }
+        .map-container{
+            display:flex;
+            justify-content: center;
+            .actual-map{
+width:80vw;
+                @include mid{width:33vw;
+                height:33vh}
+                
+            }
+
+            
         }
     }
 

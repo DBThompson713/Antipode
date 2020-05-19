@@ -2,7 +2,7 @@ import React from 'react';
 import MapComponent from '../MapComponent';
 import './styles.scss';
 
-const ResultsPage = (props, antipode) => {
+const ResultsPage = (props) => {
   const data = props.data;
   const antiData = props.antipode;
 

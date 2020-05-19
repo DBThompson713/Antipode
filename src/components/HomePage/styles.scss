@@ -32,7 +32,7 @@
         &:active{
             background:red;
         }
-        @include desktop {
+        @include mid {
             max-width: 175px;
         }
     }

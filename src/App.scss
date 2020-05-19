@@ -45,7 +45,7 @@
   font-size: 34px;
   color: rgb(255, 255, 255);
   text-shadow: $textShadow;
-  @include desktop{
+  @include mid{
     top: 5vh;
     left: 6vw;
   }

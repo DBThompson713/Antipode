@@ -14,3 +14,9 @@ $desktop-width: 1000px;
     @content;
   }
 }
+
+@mixin mid {
+    @media (min-width: #{$tablet-width}) {
+      @content;
+    }
+  }

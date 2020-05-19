@@ -12,7 +12,10 @@ const MapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: (
+      <div className='actual-map' style={{ minHeight: `25vh` }} />
+    ),
+    disableDefaultUI: true,
     mapElement: <div style={{ height: `100%` }} />,
   }),
 
@@ -29,6 +32,9 @@ const MapComponent = compose(
     >
       <Marker position={{ lat: props.lat, lng: props.long }} />
     </GoogleMap>
+    <p>
+      Lat:{parseInt(props.lat)} - Long:{parseInt(props.long)}
+    </p>
   </div>
 ));
 
