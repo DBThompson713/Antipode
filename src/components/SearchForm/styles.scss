@@ -1,5 +1,4 @@
-@import './../../sass/resources.scss';
-
+@import "./../../sass/resources.scss";
 
 .search-form {
     display: flex;
@@ -22,13 +21,12 @@
         text-shadow: $textShadow;
         &::placeholder {
             color: white;
-            opacity:.55;
-            font-size:75%;
+            opacity: 0.55;
+            font-size: 75%;
             text-shadow: $textShadow;
         }
         &:focus {
             outline: none;
         }
     }
-
 }

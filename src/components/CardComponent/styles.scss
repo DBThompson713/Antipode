@@ -1,9 +1,10 @@
 @import "./../../sass/resources.scss";
 
 .card {
-  position: relative;
+  position: fixed;
   height: 80vh;
   width: 80vw;
+  overflow:hidden;
 
   &Side {
     height: 80vh;

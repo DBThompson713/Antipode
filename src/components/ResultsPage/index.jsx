@@ -26,7 +26,7 @@ const ResultsPage = (props) => {
         oppLongitude={oppLongitude}
         antipodeName={antipodeName}
       />
-      <p id='instructions'>Tap the map to see the antipode</p>
+      <p id='instructions'>- Tap the map to see the antipode -</p>
     </div>
   );
 };
