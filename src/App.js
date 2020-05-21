@@ -1,8 +1,7 @@
 import React from 'react';
 import Homepage from './components/HomePage';
-import AppContainer from './components/AppContainer';
 import ResultsPage from './components/ResultsPage';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
 
 function App() {
