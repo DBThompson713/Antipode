@@ -29,7 +29,7 @@ const TheWeather = (props) => {
   };
 
   return (
-    <div>
+    <div className='huh'>
       {temperature && (
         <h2>
           Weather : {temperature}°C - {conditions}
