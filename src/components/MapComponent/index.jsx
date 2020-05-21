@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { compose, withProps } from 'recompose';
 import {
   withScriptjs,
@@ -7,6 +7,9 @@ import {
   Marker,
 } from 'react-google-maps';
 import TheWeather from './../Weather';
+
+// const [longitude, setLongitude] = useState();
+// const [latitude, setLatitude] = useState();
 
 const MapComponent = compose(
   withProps({

@@ -1,6 +1,7 @@
 import React from 'react';
 import MapComponent from '../MapComponent';
 import './styles.scss';
+import SearchForm from '../SearchForm';
 
 const ResultsPage = (props) => {
   const data = props.data;
@@ -19,6 +20,25 @@ const ResultsPage = (props) => {
   return (
     <div className='results-container'>
       {/* YOUR LOCATION */}
+      {/* <div className='newSearch'>
+        <SearchForm
+          handleInput={props.handleInput}
+          location={props.location}
+          inputElement={props.inputElement}
+          getAntipode={props.getAntipode}
+          handleKeyDown={props.handleKeyDown}
+        />
+        <div
+          role='button'
+          className='search-button'
+          type='submit'
+          onClick={props.getAntipode}
+        >
+          Find antipode
+        </div>
+      </div> */}
+
+      {/*  */}
 
       <section className='results your-location '>
         <h1 className='title-coords'>

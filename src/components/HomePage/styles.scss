@@ -8,8 +8,10 @@
     left: 0;
     background-image: url("./../../images/sky.jpeg");
     background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -34,6 +36,19 @@
         }
         @include mid {
             max-width: 175px;
+        }
+    }
+    #define{
+        @include fontBasic;
+            position: absolute;
+            width:94vw;
+            bottom:6.5vh;
+            left:0;
+            padding: 0 3vh;
+          
+        span{
+            font-style: italic;
+            
         }
     }
 }

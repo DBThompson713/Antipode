@@ -52,7 +52,7 @@ const Homepage = () => {
         })
       )
       .catch('Something went wrong');
-    setHideResults(!hideResults);
+    setHideResults(true);
   };
 
   return (
@@ -75,6 +75,13 @@ const Homepage = () => {
           >
             Find antipode
           </div>
+          <p id='define'>
+            antipode:{' '}
+            <span>
+              the parts of the earth diametrically opposite -- the exact
+              opposite
+            </span>
+          </p>
         </div>
       )}
 
@@ -84,6 +91,11 @@ const Homepage = () => {
           antipode={antipodeData}
           oppLat={oppLat}
           oppLong={oppLong}
+          handleInput={handleInput}
+          location={location}
+          inputElement={inputElement}
+          getAntipode={getAntipode}
+          handleKeyDown={handleKeyDown}
         />
       )}
     </div>
