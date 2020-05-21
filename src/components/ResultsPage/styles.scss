@@ -18,46 +18,22 @@
         justify-content: center;
         margin-top: 90px;
     }
-
-    .results {
+    #instructions {
         @include fontBasic;
-        height: 1000px;
-        margin-top: -20px;
-        width: 80vw;
-        height: 20vh;
-        margin-bottom: 10px;
-
-        @include mid {
-            width: 42vw;
-        }
-        .map-container {
-            display: flex;
-            justify-content: center;
-            .actual-map {
-                width: 80vw;
-                @include mid {
-                    width: 33vw;
-                    height: 33vh;
-                }
-            }
-        }
-        .title-coords{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            
-            }
-            .coords{
-                font-style: italic;
-                font-size:1rem;
-        }
+        position: absolute;
+        width: 94vw;
+        bottom: 6.5vh;
+        left: 0;
+        padding: 0 3vh;
+        font-style: italic;
         
-    }
+        @include mid{
+            font-size:1.35rem;
+        }
 
-    .your-location {
-    }
-    .antipode-location {
-        margin-top: -40px;
+        span {
+            font-style: italic;
+        }
     }
 }
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import cardStyles from './Card.module.scss';
+import MapComponent from './../MapComponent';
+import './styles.scss';
 
 const Card = (props) => {
-  const imageUrl = props.imageUrl;
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -11,25 +11,60 @@ const Card = (props) => {
     config: { mass: 5, tension: 500, friction: 80 },
   });
   return (
-    <div
-      className={cardStyles.card}
-      style={{ gridArea: `card-${props.cardNumber}` }}
-      onClick={() => set((state) => !state)}
-    >
+    <div className='card' onClick={() => set((state) => !state)}>
       <animated.div
-        className={`${cardStyles.cardSide} ${cardStyles.cardSideBack}`}
+        className='cardSide cardSideBack'
         style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}
       >
-        <h1>Card {props.cardNumber}</h1>
+        <div>
+          <h1 className='title-coords'>{props.locationName} </h1>
+          <p>
+            <span className='coords'>
+              LAT: {parseInt(props.latitude)} :: LNG:{parseInt(props.longitude)}
+            </span>
+          </p>
+        </div>
+
+        <div className='map-container'>
+          <MapComponent
+            lat={props.latitude}
+            long={props.longitude}
+            className='the-map'
+          />
+        </div>
       </animated.div>
       <animated.div
-        className={`${cardStyles.cardSide} ${cardStyles.cardSideFront}`}
+        className='cardSide cardSideFront'
         style={{
-          backgroundImage: `url( ${imageUrl} )`,
           opacity,
           transform: transform.interpolate((t) => `${t} rotateY(180deg)`),
         }}
-      />
+      >
+        {props.antipodeName !==
+          'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
+          <h1 className='title-coords'>{props.antipodeName}</h1>
+        )}
+        {props.antipodeName ===
+          'Undefined Graffiti, Sannat, Gozo Region, Malta' && (
+          <div>
+            <h1 className='title-coords'>Antipode</h1>
+            <p>
+              <span className='coords'>
+                LAT: {parseInt(props.oppLatitude)} :: LNG:
+                {parseInt(props.oppLongitude)}
+              </span>
+            </p>
+          </div>
+        )}
+
+        <div className='map-container'>
+          <MapComponent
+            lat={props.oppLatitude}
+            long={props.oppLongitude}
+            className='the-map'
+          />
+        </div>
+      </animated.div>
     </div>
   );
 };

@@ -31,24 +31,23 @@
         box-shadow: $shadow;
         text-shadow: $textShadow;
 
-        &:active{
-            background:red;
+        &:active {
+            background: #85559d;
         }
         @include mid {
             max-width: 175px;
         }
     }
-    #define{
+    #define {
         @include fontBasic;
-            position: absolute;
-            width:94vw;
-            bottom:6.5vh;
-            left:0;
-            padding: 0 3vh;
-          
-        span{
+        position: absolute;
+        width: 94vw;
+        bottom: 6.5vh;
+        left: 0;
+        padding: 0 3vh;
+
+        span {
             font-style: italic;
-            
         }
     }
 }

@@ -22,7 +22,6 @@ const TheWeather = (props) => {
       .then((res) => {
         const weatherDetails = res.data;
         setTemperature(parseInt(weatherDetails.main.temp));
-        // console.log(weatherDetails);
         setConditions(weatherDetails.weather[0].description);
       })
 
