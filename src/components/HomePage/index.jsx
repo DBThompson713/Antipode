@@ -42,9 +42,13 @@ const Homepage = () => {
       .get(coordsCall)
 
       .then((res) => {
-        setOppLong(res.data.results[0].geometry.lng - 180);
-        setOppLat(res.data.results[0].geometry.lat * -1);
-        setResultsData(res.data.results[0]);
+        if (res.data.results[0]) {
+          setOppLong(res.data.results[0].geometry.lng - 180);
+          setOppLat(res.data.results[0].geometry.lat * -1);
+          setResultsData(res.data.results[0]);
+        }
+
+        // setOppLong(res.data.results[0].geometry.lng - 180);
       })
       .then(
         await axios.get(antipodeCall).then((results) => {
@@ -76,11 +80,7 @@ const Homepage = () => {
             Find antipode
           </div>
           <p id='define'>
-            antipode:{' '}
-            <span>
-              the parts of the earth diametrically opposite -- the exact
-              opposite
-            </span>
+            antipode: <span>The diametrically opposite spot on Earth</span>
           </p>
         </div>
       )}

@@ -1,5 +1,6 @@
 $tablet-width: 768px;
 $desktop-width: 1000px;
+$large-desktop-width: 1000px;
 
 
 
@@ -9,8 +10,8 @@ $desktop-width: 1000px;
     }
   }
 
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
+@mixin bigscreen {
+  @media (min-width: #{$large-desktop-width}) {
     @content;
   }
 }

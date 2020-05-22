@@ -7,6 +7,7 @@ import {
   Marker,
 } from 'react-google-maps';
 import TheWeather from './../Weather';
+import TimeZoneComponent from './../TimeComponent';
 
 const MapComponent = compose(
   withProps({
@@ -24,6 +25,7 @@ const MapComponent = compose(
 )((props) => (
   <div>
     <div>
+      <TimeZoneComponent lat={props.lat} long={props.long} />
       <TheWeather lat={props.lat} long={props.long} />
     </div>
     <GoogleMap

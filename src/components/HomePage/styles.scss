@@ -45,6 +45,11 @@
         left: 0;
         padding: 0 3vh;
 
+        @include mid{
+            bottom: 2vh;
+            font-size:1.35rem;
+        }
+
         span {
             font-style: italic;
         }

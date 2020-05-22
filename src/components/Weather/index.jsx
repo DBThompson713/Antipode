@@ -22,20 +22,26 @@ const TheWeather = (props) => {
       .then((res) => {
         const weatherDetails = res.data;
         setTemperature(parseInt(weatherDetails.main.temp));
-        setConditions(weatherDetails.weather[0].description);
+        setConditions(weatherDetails.weather[0].main);
       })
 
       .catch('Something went wrong');
   };
 
   return (
-    <div className='huh'>
+    <div className='weather-container'>
       {temperature && (
         <h2>
-          Weather : {temperature}°C - {conditions}
+          <span>Weather: </span> {temperature}°C - {conditions}
         </h2>
       )}
-      {!temperature && <h2>Weather Data Unavailable </h2>}
+      {!temperature && (
+        <h2 id=''>
+          <span className='no-weather'>
+            No weather data available for that area
+          </span>
+        </h2>
+      )}
     </div>
   );
 };

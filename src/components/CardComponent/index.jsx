@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import MapComponent from './../MapComponent';
+import TimeComponent from './../TimeComponent';
 import './styles.scss';
 
 const Card = (props) => {

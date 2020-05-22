@@ -1,0 +1,9 @@
+@import './../../sass/resources.scss';
+
+.time-container{
+    @include resultContainer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}

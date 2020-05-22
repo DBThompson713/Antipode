@@ -2,9 +2,9 @@
 
 .card {
   position: fixed;
-  height: 80vh;
+  height: 100vh;
   width: 80vw;
-  overflow:hidden;
+  overflow: hidden;
 
   &Side {
     height: 80vh;
@@ -29,7 +29,8 @@
         width: 80vw;
         box-shadow: $shadow-three;
         @include mid {
-          width: 33vw;
+          width: 45vw;
+          max-width: 600px;
           height: 33vh;
         }
       }
@@ -38,7 +39,6 @@
     &Front {
       background-color: transparent;
       display: flex;
-
       align-items: center;
       justify-content: flex-start;
     }
@@ -46,7 +46,6 @@
     &Back {
       background: transparent;
       display: flex;
-
       align-items: center;
       justify-content: flex-start;
     }

@@ -2,7 +2,7 @@
 
 .results-container {
     min-height: 750px;
-    height:100vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -11,13 +11,12 @@
     padding-top: 5vh;
     overflow: hidden;
     margin-top: 65px;
-    
 
     @include mid {
         align-items: baseline;
         flex-direction: row;
         justify-content: center;
-        margin-top: 90px;
+        margin-top: 60px;
     }
     #instructions {
         @include fontBasic;
@@ -27,10 +26,11 @@
         left: 0;
         padding: 0 3vh;
         font-style: italic;
-        font-size:1.25rem;
-        
-        @include mid{
-            font-size:1.5rem;
+        font-size: 1.25rem;
+
+        @include mid {
+            font-size: 1.5rem;
+            bottom: 2vh;
         }
         span {
             font-style: italic;
@@ -38,6 +38,10 @@
     }
 }
 
+#no-location{
+    @include fontBasic;
+    font-size:2.2rem;
+}
 .hideResults {
     display: hidden;
 }

@@ -1,0 +1,12 @@
+@import './../../sass/resources.scss';
+
+.weather-container{
+    @include resultContainer;
+    
+    .no-weather{
+        width:100%;
+        
+      
+      
+    }
+}
