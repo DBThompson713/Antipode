@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className='App'>
+      <p id='copyright'>©2020 Dale Thompson</p>
       <p className='title' onClick={reset}>
         antipode
       </p>

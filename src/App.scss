@@ -33,6 +33,17 @@
   color: white;
 }
 
+#copyright{
+  z-index:99;
+  @include fontBasic;
+  position: absolute;
+  font-size:1rem;
+  top:10vh;
+  right:-60px;
+  opacity:.3;
+  transform: rotate(90deg);
+}
+
 .App-link {
   color: #61dafb;
 }
