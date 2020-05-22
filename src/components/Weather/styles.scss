@@ -2,6 +2,12 @@
 
 .weather-container{
     @include resultContainer;
+    h2{
+        margin: 12px 0;
+        @include mid{
+            margin:15px;
+        }
+    }
     
     .no-weather{
         width:100%;

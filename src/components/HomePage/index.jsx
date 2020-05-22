@@ -40,15 +40,12 @@ const Homepage = () => {
   const GetCoords = async (location) => {
     await axios
       .get(coordsCall)
-
       .then((res) => {
         if (res.data.results[0]) {
           setOppLong(res.data.results[0].geometry.lng - 180);
           setOppLat(res.data.results[0].geometry.lat * -1);
           setResultsData(res.data.results[0]);
         }
-
-        // setOppLong(res.data.results[0].geometry.lng - 180);
       })
       .then(
         await axios.get(antipodeCall).then((results) => {

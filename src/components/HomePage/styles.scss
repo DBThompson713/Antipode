@@ -39,11 +39,12 @@
     }
     #define {
         @include fontBasic;
-        position: absolute;
-        width: 94vw;
-        bottom: 6.5vh;
+        text-align:center;
+        position: fixed;
+        margin: 10px auto;
+        width: 100vw;
+        bottom: 0;
         left: 0;
-        padding: 0 3vh;
 
         @include mid{
             bottom: 2vh;

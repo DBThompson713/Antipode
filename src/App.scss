@@ -36,9 +36,9 @@
 #copyright{
   z-index:99;
   @include fontBasic;
-  position: absolute;
+  position: fixed;
   font-size:1rem;
-  top:10vh;
+  top:13vh;
   right:-60px;
   opacity:.3;
   transform: rotate(90deg);
@@ -53,7 +53,7 @@
   z-index: 99;
   position: absolute;
   transform-origin: right;
-  animation: $antipodeTitle;
+  animation: $antipodeTitleThree;
   animation-delay: 2.5s;
   top:0;
   left: 5vw;

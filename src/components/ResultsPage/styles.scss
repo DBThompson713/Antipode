@@ -2,6 +2,9 @@
 
 .results-container {
     min-height: 750px;
+    position: fixed;
+    top:0;
+    left:0;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -10,7 +13,7 @@
     align-items: center;
     padding-top: 5vh;
     overflow: hidden;
-    margin-top: 65px;
+    margin-top: 20px;
 
     @include mid {
         align-items: baseline;
@@ -20,11 +23,10 @@
     }
     #instructions {
         @include fontBasic;
-        position: absolute;
-        width: 94vw;
-        bottom: 6.5vh;
+        position: fixed;
+       width:100vw;
+        bottom: 0;
         left: 0;
-        padding: 0 3vh;
         font-style: italic;
         font-size: 1.25rem;
 

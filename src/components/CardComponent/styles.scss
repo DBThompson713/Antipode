@@ -7,6 +7,7 @@
   overflow: hidden;
 
   &Side {
+    @include fontBasic;
     height: 80vh;
     width: 80vw;
     position: absolute;
@@ -19,14 +20,14 @@
     border-radius: 3px;
     overflow: hidden;
     padding-top: 30px;
-    @include fontBasic;
-
+    
     background-size: cover;
     .map-container {
       display: flex;
       justify-content: center;
       .actual-map {
         width: 80vw;
+        height:250px;
         box-shadow: $shadow-three;
         @include mid {
           width: 45vw;
