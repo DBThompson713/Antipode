@@ -56,7 +56,7 @@
   animation: $antipodeTitleThree;
   animation-delay: 2.5s;
   top:0;
-  left: 5vw;
+  left: 5.5vw;
   font-size: 1.5rem;
   font-family: verdana;
   text-align: center;
@@ -64,7 +64,7 @@
   color: rgb(255, 255, 255);
   text-shadow: $textShadow;
   @include mid{
-    top: 5vh;
-    left: 6vw;
+    top: 0;
+    left: 5vh;
   }
 }

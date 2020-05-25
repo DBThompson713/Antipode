@@ -3,24 +3,30 @@
     color: #fff;
 }
 
-@mixin resultContainer{
+@mixin resultContainer {
     padding: 0 10px;
-    @include mid{
-        padding: 0 30px;
+    @include mid {
+        padding: 0 30px 0 5px;
     }
-    h2{
-        width:100%;
+    h2 {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
     }
 
-    span{
-        font-size: .95rem;
-        @include mid{
+    span {
+        font-size: 0.95rem;
+        @include mid {
             font-size: 1.25rem;
         }
-    
     }
+}
+
+@mixin activeButton {
+    background: $buttonBGActive;
+    color: #fff;
+    position: relative;
+    top: 15.15vh;
+    box-shadow: $shadowActive;
 }
