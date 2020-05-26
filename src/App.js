@@ -17,7 +17,6 @@ function App() {
       </p>
       <Router>
         <Route exact path='/' component={Homepage} />
-        <Route path='/resultspage' component={ResultsPage} />
       </Router>
     </div>
   );
