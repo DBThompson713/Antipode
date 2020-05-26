@@ -23,8 +23,10 @@ const TimeComponent = (props) => {
 
       .then((res) => {
         const theTime = res.data.time_12;
+        console.log(theTime);
         setTime(theTime);
         setDate(res.data.date_time_txt);
+        console.log(Date);
       })
       .catch('Something went wrong');
   };

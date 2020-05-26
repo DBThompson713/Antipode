@@ -42,7 +42,11 @@ const Homepage = () => {
       .get(coordsCall)
       .then((res) => {
         if (res.data.results[0]) {
-          setOppLong(res.data.results[0].geometry.lng - 180);
+          if (res.data.results[0].geometry.lng <= 0) {
+            setOppLong(180 + res.data.results[0].geometry.lng);
+          } else {
+            setOppLong(res.data.results[0].geometry.lng - 180);
+          }
           setOppLat(res.data.results[0].geometry.lat * -1);
           setResultsData(res.data.results[0]);
         }
@@ -55,7 +59,6 @@ const Homepage = () => {
       .catch('Something went wrong');
     setHideResults(true);
   };
-
   return (
     <div className='home-container'>
       {!hideResults && (
