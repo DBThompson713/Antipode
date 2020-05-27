@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import MapComponent from './../MapComponent';
+import compass from './../../images/compass-white.svg';
 import './styles.scss';
 
 const Card = (props) => {
@@ -17,10 +18,14 @@ const Card = (props) => {
         style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}
       >
         <div>
-          <h1 className='title-coords'>{props.locationName} </h1>
+          <h1 className='title-coords'>
+            {props.locationName.substring(0, 44)}{' '}
+          </h1>
           <p>
             <span className='coords'>
-              LAT: {parseInt(props.latitude)} :: LNG:{parseInt(props.longitude)}
+              LAT: {parseInt(props.latitude)}{' '}
+              <img className='compass' src={compass} alt='compass' /> LNG:
+              {parseInt(props.longitude)}
             </span>
           </p>
         </div>
@@ -50,7 +55,8 @@ const Card = (props) => {
             <h1 className='title-coords'>Antipode</h1>
             <p>
               <span className='coords'>
-                LAT: {parseInt(props.oppLatitude)} :: LNG:
+                LAT: {parseInt(props.oppLatitude)}{' '}
+                <img className='compass' src={compass} alt='compass' /> LNG:
                 {parseInt(props.oppLongitude)}
               </span>
             </p>

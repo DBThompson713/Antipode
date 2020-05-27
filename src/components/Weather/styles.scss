@@ -4,8 +4,10 @@
     @include resultContainer;
     h2{
         margin: 12px 0;
+        font-size: 1.4rem;
         @include mid{
             margin:15px;
+            font-size:1.5rem;
         }
     }
     .no-weather{
