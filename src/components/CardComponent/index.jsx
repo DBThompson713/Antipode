@@ -19,7 +19,7 @@ const Card = (props) => {
       >
         <div>
           <h1 className='title-coords'>
-            {props.locationName.substring(0, 19)}{' '}
+            {props.locationName.substring(0, 17)}{' '}
           </h1>
           <p>
             <span className='coords'>
